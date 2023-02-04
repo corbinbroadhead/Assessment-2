@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+const pizza = {
+    name: "Cheese",
+    price: 11.00,
+    category: "appetizer",
+    popularity: 3,
+    rating: 4.5,
+    tags: ['kids', 'gluten-free options']
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,8 @@
 */
 
 //CODE HERE
-
+console.log(pizza.price);
+console.log(pizza['rating']);
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +61,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1]);
 
 /*
     Third, destructure the price off of the
@@ -63,7 +71,8 @@
 */
 
 //CODE HERE
-
+let {price} = pizza;
+console.log(price);
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +82,8 @@
 */
 
 //CODE HERE
-
+let {category} = pizza;
+console.log(category);
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +98,48 @@
 */
 
 //CODE HERE
-
+let foodArr = [
+    {
+        name: "Pizza",
+        price: 11.00,
+        category: "entree",
+        popularity: 3,
+        rating: 4.5,
+        tags: ['kids', 'gluten-free']
+    },
+    {
+        name: "Spaghetti",
+        price: 13.50,
+        category: "entree",
+        popularity: 2,
+        rating: 4.7,
+        tags: ['kids', 'sauce options', 'noodle options']
+    },
+    {
+        name: "Breadsticks",
+        price: 6.50,
+        category: "appetizer",
+        popularity: 1,
+        rating: 4.9,
+        tags: ['kids', 'garlic or cheese']
+    },
+    {
+        name: "Meatball Soup",
+        price: 11.50,
+        category: "entree",
+        popularity: 8,
+        rating: 4.3,
+        tags: ['gluten-free', 'side options']
+    },
+    {
+        name: "Meatball Platter",
+        price: 8.00,
+        category: "appetizer",
+        popularity: 5,
+        rating: 4.2,
+        tags: ['gluten-free']
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,7 +156,7 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+// const filteredFood = foodArr.filter(/*CALLBACK*/);
 
 
 
