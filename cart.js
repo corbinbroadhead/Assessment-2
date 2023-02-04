@@ -57,7 +57,15 @@ console.log(summedPrice);
 */
 
 //CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    let finalPrice = 0;
+    let taxPrice = 0;
+    taxPrice = cartTotal * tax;
+    finalPrice = cartTotal + taxPrice - couponValue;
+    return finalPrice;
+}
 
+console.log(calcFinalPrice(34.95, 5, 0.5));
 
 
 //////////////////PROBLEM 3////////////////////
