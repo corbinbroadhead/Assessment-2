@@ -155,8 +155,11 @@ let foodArr = [
 */
 
 //CODE HERE
-
-// const filteredFood = foodArr.filter(/*CALLBACK*/);
+const tagFilter = (arr) => {
+    return arr.tags.includes('gluten-free');
+} 
+const filteredFood = foodArr.filter(tagFilter);
+console.log(filteredFood);
 
 
 
@@ -200,6 +203,29 @@ let foodArr = [
 */
 
 //CODE HERE
+// const filterByProperty = foodArr.filter(property, number, type => )
+const filterByProperty = (property, number, type) => {
+    let flexibleFilterArr = [];
+    if (type === 'above') {
+        flexibleFilterArr = foodArr.filter(function (property, number){
+         return foodArr.property > number});
+    } else if (type === 'below') {
+        flexibleFilterArr = foodArr.filter(function (property, number){
+            return foodArr.property < number});
+    } else {
+        console.log(`${type} is not an acceptable type. Please use 'above' or 'below'.`);
+    }
+}
+
+
+// const filterByProperty = (property, number, type) => {
+//     let flexibleFilterArr = [];
+//     if ()
+// }
+
+// const attempt = foodArr.filter(prop, num, type, cb => {
+//     return 
+// })
 
 
 /*
@@ -210,3 +236,4 @@ let foodArr = [
 */
 
 //CODE HERE
+console.log(filterByProperty('rating', 4.4, 'above'));

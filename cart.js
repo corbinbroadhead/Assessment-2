@@ -34,9 +34,12 @@ const cart = [
 ]
 
 //CODE HERE
+const totalPrice = (acc, cur) => {
+   return acc + cur.price;
+}
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce(totalPrice, 0);
+console.log(summedPrice);
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -79,7 +82,13 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+    Typically when shopping online one of the first things that you are asked to give by the website which you are purchasing from is 
+    for your email. That will be one of my elements. Another thing they like to know is if you are a returning customer or not. That 
+    will be one of the elements. They also want to know your name, where you live, and how you found out about their site, and your age. 
+    This will be our properties for the customer information objects. This information will help the site know what their most effective 
+    advertising is, where there customers live so that they can cater to them easier, and of course the basic account into. The types
+    will be as follows: email - string, returning customer - boolean, name - string, location - string, how they found the site - string,
+    age - number.
 */
 
 /*
@@ -88,3 +97,11 @@ const cart = [
 */
 
 //CODE HERE
+const customers = {
+    name: "John Doe",
+    email: "johndoe@nukmail.com",
+    location: "Dallas, TX",
+    newCustomer: true,
+    foundUsThrough: "friends",
+    age: 32
+}
