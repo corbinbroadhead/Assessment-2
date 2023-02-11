@@ -34,10 +34,10 @@
 const pizza = {
     name: "Cheese",
     price: 11.00,
-    category: "appetizer",
+    category: "entree",
     popularity: 3,
     rating: 4.5,
-    tags: ['kids', 'gluten-free options']
+    tags: ['kids', 'gluten-free']
 }
 
 
@@ -155,13 +155,16 @@ let foodArr = [
 */
 
 //CODE HERE
-const tagFilter = (arr) => {
-    return arr.tags.includes('gluten-free');
-} 
-const filteredFood = foodArr.filter(tagFilter);
-console.log(filteredFood);
+// const tagFilter = (arr) => {
+//     return arr.tags.includes('gluten-free');
+// } 
+// const filteredFood = foodArr.filter(tagFilter);
+// console.log(filteredFood);
 
+const filteredFood = foodArr.filter((food) => food.tags.includes('appetizer'));
 
+/*                          The (food) ^ is declaring that the objects within the foodArr are the argument that is being passed through.
+                            So food.tags.includes works because the objects within the foodArr are 'food'. */
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -204,19 +207,35 @@ console.log(filteredFood);
 
 //CODE HERE
 // const filterByProperty = foodArr.filter(property, number, type => )
-const filterByProperty = (property, number, type) => {
-    let flexibleFilterArr = [];
-    if (type === 'above') {
-        flexibleFilterArr = foodArr.filter(function (property, number){
-         return foodArr.property > number});
-    } else if (type === 'below') {
-        flexibleFilterArr = foodArr.filter(function (property, number){
-            return foodArr.property < number});
-    } else {
-        console.log(`${type} is not an acceptable type. Please use 'above' or 'below'.`);
-    }
-}
+// const filterByProperty = (property, number, type) => {
+//     let flexibleFilterArr = [];
+//     if (type === 'above') {
+//         flexibleFilterArr = foodArr.filter(function (property, number){
+//          return foodArr.property > number});
+//     } else if (type === 'below') {
+//         flexibleFilterArr = foodArr.filter(function (property, number){
+//             return foodArr.property < number});
+//     } else {
+//         console.log(`${type} is not an acceptable type. Please use 'above' or 'below'.`);
+//     }
+// }
 
+const filterByProperty = (property, number, type) => {
+    let filteredFood;
+    if (type === "above") {
+        filteredFood = foodArr.filter((food) => {
+            return food[property] > number;
+        });
+    } else if (type === "below") {
+        filteredFood = foodArr.filter((food) => {
+            return food[property] < number;
+        });
+    } else {
+        console.log('invalid type');
+        return false;
+    }
+    return filteredFood;
+}
 
 // const filterByProperty = (property, number, type) => {
 //     let flexibleFilterArr = [];
@@ -236,4 +255,4 @@ const filterByProperty = (property, number, type) => {
 */
 
 //CODE HERE
-console.log(filterByProperty('rating', 4.4, 'above'));
+console.log(filterByProperty('price', 9.5, 'below'));
